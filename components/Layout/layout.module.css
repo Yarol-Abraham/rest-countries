@@ -1,0 +1,43 @@
+.header{
+    width: 100%;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.123);
+    background: #ffff;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0.5rem;
+
+}
+
+.title{
+    font-size: 1.4rem;
+    font-family: 'Nunito Sans';
+    font-weight: 800;
+}
+
+@media only screen and (min-width: 37.5em) {
+    .title{
+        font-size: 2rem;
+    }
+  } /* 600px */
+
+.btn_dark{
+    cursor: pointer;
+    border: none;
+    width: 12rem;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 800;
+}
+
+.svg{
+    width: 2rem;
+}
