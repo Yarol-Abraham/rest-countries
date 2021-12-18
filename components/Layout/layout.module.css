@@ -29,7 +29,7 @@
 .btn_dark{
     cursor: pointer;
     border: none;
-    width: 12rem;
+    width: 11rem;
     background: transparent;
     display: flex;
     flex-direction: row;

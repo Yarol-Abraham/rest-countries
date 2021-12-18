@@ -1,6 +1,8 @@
+import styles from '../styles/index.module.css';
+
 import Layout from '../components/Layout/Layout';
 import Search from '../components/Search/Search';
-import styles from '../styles/index.module.css';
+import Countries from '../components/Countries/Countries';
 
 export default function Home() {
   return (
@@ -8,10 +10,8 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.items}>
             <Search />
-            <div>
-              2
-            </div>
           </div>
+          <Countries />
         </div>
     </Layout>
   )
