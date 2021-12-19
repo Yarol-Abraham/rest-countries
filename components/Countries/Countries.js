@@ -1,36 +1,28 @@
-import { useContext, useEffect } from "react";
+
+import { useRouter } from "next/router";
 
 import styles from './countries.module.css';
 
-import countriesContext from '../../context/countriesContext';
+export default function Countries({ countries }){
+  
+    let router = useRouter();
 
-export default function Countries(){
-    
-   const _countriesContext = useContext(countriesContext);
-   const { getAllCountries, countries } =  _countriesContext;
-
-    useEffect(()=>{ getAllCountries(); }, [])
-    console.log(countries);
-    const handleClick = function() {
-        console.log('click');
-    } 
+    const handleClick = function(name) { router.push(`/countries/${name}`); } 
 
     return(
         <div className={styles.countries}>
            {
-               countries.length > 0 ? (
                 countries.map(el => (
-                    <>
                     <div key={el.name.common} className={styles.card}>
                         <div 
                             className={styles.imagen}
-                            onClick={handleClick}
+                            onClick={()=> handleClick(el.name.common)}
                         >
-                          { /* eslint-disable-next-line @next/next/no-img-element */ }
-                           <img 
+                            { /* eslint-disable-next-line @next/next/no-img-element */ }
+                            <img 
                                 src={el.flags.png}
                                 alt="imagen de prueba"
-                           />
+                            />
                         </div>
                         <div className={styles.content}>
                             <h4 className={styles.title}>{el.name.common}</h4>
@@ -39,10 +31,8 @@ export default function Countries(){
                             <p className={styles.paragraph}><strong>Capital: </strong> {el.capital} </p>
                         </div>
                     </div>
-                    </>
                 ))
-               ) : <p>Cargando...</p>
-                }
+            }
         </div>
     )
 }

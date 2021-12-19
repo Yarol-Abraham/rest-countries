@@ -1,8 +1,21 @@
-import Head from 'next/head'
+import { useEffect } from 'react';
+
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import Header from './Header';
 
 export default function Layout({ children }){
+
+    let router = useRouter();
+
+    useEffect(()=>{
+        if(router.pathname === "/"){
+            document.querySelector('body').style.background = "#F5F5F5"; 
+        }else{
+            document.querySelector('body').style.background = "#FFF";
+        }
+    }, [router])
 
     return(
     <>
