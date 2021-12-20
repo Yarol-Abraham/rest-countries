@@ -105,7 +105,7 @@ function CountriesAction(props) {
     {
         try {
             let url = "/all";
-            if(name) url = `/name/${name}?fullText=true`;
+            if(name) url = `/name/${name}`;
             const response = await createAxios.get(url); 
             dispatch({
                 type: FILTER_COUNTRIE_SUCCESS,
