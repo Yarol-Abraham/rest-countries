@@ -21,8 +21,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/rest-countries-api-with-nextjs-and-css-modules-UW4NoI0fm)
-- Live Site URL: [Add live site URL here](https://rest-countries-xi.vercel.app)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/rest-countries-api-with-nextjs-and-css-modules-UW4NoI0fm)
+- Live Site URL: [Demo](https://rest-countries-xi.vercel.app)
 
 ### Built with
 
