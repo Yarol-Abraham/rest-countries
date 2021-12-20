@@ -6,11 +6,10 @@ import LoadingIo from '../loading/Loading';
 
 import countriesContext from '../../context/countriesContext';
 
-
 export default function CountrieName({ name }) {
 
     const _countriesContext = useContext(countriesContext);
-    const { getCountrie, countrie } =  _countriesContext;
+    const { getCountrie, countrie, mode } =  _countriesContext;
     useEffect(()=>{ getCountrie(name); }, []);
 
     if(Object.keys(countrie).length === 0) return <LoadingIo />
@@ -67,9 +66,9 @@ export default function CountrieName({ name }) {
                                    {
                                        countrie.borders ?
                                         countrie.borders.map(el=> (
-                                            <p key={el} className={styles.card_subparagraph} >{el}</p>
+                                            <p key={el} className={`${styles.card_subparagraph} ${mode === 'yes' ? 'bg_dark' : ''}`} >{el}</p>
                                         ))
-                                       : <p className={styles.card_subparagraph}>no borders</p>
+                                       : <p className={`${styles.card_subparagraph} ${mode === 'yes' ? 'bg_dark' : ''}`}>no borders</p>
                                    }
                                 </div>
                             </div>

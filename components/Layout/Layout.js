@@ -1,13 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useContext } from 'react';
 
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import Header from './Header';
 
+import countriesContext from '../../context/countriesContext';
+
 export default function Layout({ children }){
 
     let router = useRouter();
+
+    const _countriesContext = useContext(countriesContext);
+    const { mode } =  _countriesContext;
+
+    useEffect(() => {
+        if(mode === "yes"){
+            document.querySelector('body').classList.add('bg_dark_ligth');
+        }else{
+            document.querySelector('body').classList.remove('bg_dark_ligth');
+        }
+    }, [mode])
 
     useEffect(()=>{
         if(router.pathname === "/"){
@@ -27,7 +40,7 @@ export default function Layout({ children }){
 
         <Header />
 
-        <main>
+        <main >
             {children}
         </main>
 

@@ -1,11 +1,17 @@
+import { useContext } from "react";
 
 import { useRouter } from "next/router";
 
 import styles from './countries.module.css';
 
+import countriesContext from '../../context/countriesContext';
+
 export default function Countries({ countries }){
   
     let router = useRouter();
+
+    const _countriesContext = useContext(countriesContext);
+    const { mode } =  _countriesContext;
 
     const handleClick = function(name) { router.push(`/countries/${name}`); } 
 
@@ -13,7 +19,7 @@ export default function Countries({ countries }){
         <div className={styles.countries}>
            {
                 countries.map(el => (
-                    <div key={el.name.common} className={styles.card}>
+                    <div key={el.name.common} className={`${styles.card} ${mode === 'yes' ? 'bg_dark' : ''}`}>
                         <div 
                             className={styles.imagen}
                             onClick={()=> handleClick(el.name.common)}

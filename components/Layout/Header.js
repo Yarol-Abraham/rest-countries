@@ -1,13 +1,17 @@
+import { useContext } from 'react';
 import styles from './layout.module.css';
+
+import countriesContext from '../../context/countriesContext';
 
 export default function Header(){
 
-    const handleCLick = function(){
-        console.log("dark mode");
-    }
+    const _countriesContext = useContext(countriesContext);
+    const { setMode, mode } =  _countriesContext;
+
+    const handleCLick = function(){ setMode(mode); }
 
     return(
-        <header className={styles.header} >
+        <header className={`${styles.header} ${ mode === 'yes' ? 'bg_dark' : ''}`} >
            <div className={styles.container}>
             <h1 className={styles.title}>Where in the world?</h1>
             <button

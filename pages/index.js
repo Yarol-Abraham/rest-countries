@@ -12,7 +12,14 @@ import countriesContext from '../context/countriesContext';
 export default function Home() {
 
   const _countriesContext = useContext(countriesContext);
-  const { getAllCountries, countries, status } =  _countriesContext;
+  const { 
+    getAllCountries, 
+    getForRegion, 
+    getForCountry, 
+    countries, 
+    status,
+    mode
+  } =  _countriesContext;
   useEffect(()=>{ getAllCountries(); }, []);
 
   if(countries.length === 0 && status === '') return <LoadingIo />
@@ -21,12 +28,12 @@ export default function Home() {
     <Layout>
         <div className={styles.container}>
           <div className={styles.items}>
-            <Search />
+            <Search getForRegion={getForRegion} getForCountry={getForCountry} mode={mode} />
           </div>
           {
             status === 'success' ? (
               <Countries countries={countries} />
-            ) : <p>Error..</p>
+            ) : <p>Sin resultados..</p>
           }
         </div>
     </Layout>

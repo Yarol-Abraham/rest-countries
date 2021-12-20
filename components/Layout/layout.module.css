@@ -7,7 +7,6 @@
 .container{
     width: 90%;
     margin: auto;
-
     display: flex;
     justify-content: space-between;
     padding: 2rem 0.5rem;
@@ -15,6 +14,7 @@
 }
 
 .title{
+    padding: 1rem;
     font-size: 1.4rem;
     font-family: 'Nunito Sans';
     font-weight: 800;
@@ -29,13 +29,15 @@
 .btn_dark{
     cursor: pointer;
     border: none;
-    width: 11rem;
+    width: 13rem;
     background: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     font-weight: 800;
+    padding: 1rem;
+    border-radius: 0.8rem;
 }
 
 .svg{

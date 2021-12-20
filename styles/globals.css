@@ -92,3 +92,19 @@ img {
     transform: rotate(360deg);
   }
 }
+
+/* DARK MODE  */ 
+.bg_dark,
+.bg_dark_ligth button,
+.bg_dark_ligth a,
+.bg_dark_ligth input,
+.bg_dark_ligth select{
+  background: hsl(209, 23%, 22%) !important;
+  color: #ffffff !important;
+}
+
+.bg_dark_ligth{
+  background: hsl(207, 26%, 17%) !important;
+  color: #ffffff !important;
+}
+

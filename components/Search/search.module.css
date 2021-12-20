@@ -56,6 +56,8 @@
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.102);
     width: 50%;
     font-size: 1.4rem;
+    font-family: 'Nunito Sans';
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 37.5em) {
