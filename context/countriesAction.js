@@ -53,7 +53,7 @@ function CountriesAction(props) {
     async function getCountrie(name = 'Guatemala') 
     {
         try {
-            const response = await createAxios.get(`/name/${name}`); 
+            const response = await createAxios.get(`/name/${name}?fullText=true`); 
             const data = { ...response.data[0] };
             data.moneda = "";
             Object.values(data.currencies).map(el=>{
@@ -105,7 +105,7 @@ function CountriesAction(props) {
     {
         try {
             let url = "/all";
-            if(name) url = `/name/${name}`;
+            if(name) url = `/name/${name}?fullText=true`;
             const response = await createAxios.get(url); 
             dispatch({
                 type: FILTER_COUNTRIE_SUCCESS,
